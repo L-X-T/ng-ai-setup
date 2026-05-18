@@ -1,6 +1,5 @@
 {
-  // For more information, visit: https://angular.dev/ai/mcp
-  "servers": {
+  "mcpServers": {
     "angular-cli": {
       "command": "pnpm",
       "args": ["exec", "ng", "mcp"]
@@ -21,6 +20,10 @@
       "env": {
         "URI": "http://127.0.0.1:3845/mcp"
       }
+    },
+    "nx-mcp": {
+      "command": "pnpm",
+      "args": ["exec", "nx", "mcp"]
     }
   }
 }

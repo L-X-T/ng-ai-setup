@@ -9,8 +9,8 @@
     "test": "ng test",
     "serve:ssr:ng-ai-setup": "node dist/ng-ai-setup/server/server.mjs",
     "format": "prettier --write .",
-    "prepare": "husky",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "ng:update": "ng update @angular/cli @angular/core angular-eslint @angular-eslint/builder"
   },
   "lint-staged": {
     "*.{html,js,ts}": [

@@ -16,7 +16,7 @@ This sets up the basic structure of your Angular application, including configur
 
 ### fix initial commit
 
-We fixed the initial commit by removing unnecessary duplications of the `AGENTS.md` instructions und running the following command:
+We fixed the initial commit by removing unnecessary duplications of the `AGENTS.md` instructions and running the following command:
 
 ```
 pnpm format
@@ -24,7 +24,7 @@ pnpm format
 
 which then executes:
 
-```aiignore
+```shell
 prettier --write .
 ```
 
@@ -100,10 +100,10 @@ ng lint --fix
 There are two remaining issues that we need to fix manually:
 
 ```text
-/Users/lxt/ng/ng-ai-setup/src/app/app.ts
+src/app/app.ts
   4:1  warning  The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`  @angular-eslint/prefer-on-push-component-change-detection
 
-/Users/lxt/ng/ng-ai-setup/src/main.server.ts
+src/main.server.ts
   5:47  error  Missing return type on function  @typescript-eslint/explicit-function-return-type
 ```
 
@@ -111,6 +111,15 @@ Since we're lazy, we can of course use `codex` or other tools to fix these issue
 
 ## Angular Coding Style Guide
 
-Find our [Angular Coding Style Guide](https://github.com/L-X-T/ng-ai-setup/blob/main/style-guide/style-guide.md) in the `style-guide` folder.
+Find our [Angular Coding Style Guide](style-guide/style-guide.md) in the `style-guide` folder.
 
-It contains general guidelines for writing clean and maintainable code in Angular projects, as well as specific style guides for different file types such as Git commits, HTML templates, NPM packages, SCSS styling files, and TypeScript files.
+It contains general guidelines for writing clean and maintainable code in Angular projects, as well as specific style guides for different file types such as accessibility, Git commits, HTML templates, Markdown files, NPM packages, SCSS styling files, testing (Vitest & Playwright), and TypeScript files.
+
+## Finish the AI setup
+
+In the last commit we wrapped up the agentic tooling so every AI tool — Claude Code, Codex, Cursor, Junie and VS Code — works from the same conventions and the same servers:
+
+- **Hardened `.aiignore`** so agents never read secrets, credentials or environment files (`.env`, `*.pem`, `*.key`, Angular `environment*.ts`, etc.).
+- **Registered MCP servers** in `.mcp.json` (Angular CLI, Chrome DevTools, Figma, Figma Desktop and Nx) and mirrored them into the tool-specific locations that don't read the root file: `.vscode/mcp.json`, `.junie/mcp/mcp.json` and `.codex/config.toml`.
+- **Added thin per-agent files** (`.cursorrules`, `.junie/AGENTS.md`) that defer to `AGENTS.md`, plus `.claude/settings.json` to enable the project MCP servers.
+- **Renamed `.prettierrc` to `.prettierrc.json`** and added an `ng:update` script to `package.json` for upgrading Angular.
