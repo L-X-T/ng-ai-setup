@@ -90,3 +90,21 @@ pnpm lint-staged
 By adding some more rules to our ESLint configuration, we can enforce better coding practices and catch potential issues early on. We can extend the default Angular ESLint configuration by creating a `.eslintrc.json` file in the root of our project with the following content:
 
 Just look at the `eslint.config.js` to see my recommendations.
+
+To apply the new ESLint rules, we can run the following command:
+
+```shell
+ng lint --fix
+```
+
+There are two remaining issues that we need to fix manually:
+
+```text
+/Users/lxt/ng/ng-ai-setup/src/app/app.ts
+  4:1  warning  The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`  @angular-eslint/prefer-on-push-component-change-detection
+
+/Users/lxt/ng/ng-ai-setup/src/main.server.ts
+  5:47  error  Missing return type on function  @typescript-eslint/explicit-function-return-type
+```
+
+Since we're lazy, we can of course use `codex` or other tools to fix these issues for us.
