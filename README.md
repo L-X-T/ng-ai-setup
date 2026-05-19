@@ -108,3 +108,9 @@ There are two remaining issues that we need to fix manually:
 ```
 
 Since we're lazy, we can of course use `codex` or other tools to fix these issues for us.
+
+## Angular Coding Style Guide
+
+Find our [Angular Coding Style Guide](https://github.com/L-X-T/ng-ai-setup/blob/main/style-guide/style-guide.md) in the `style-guide` folder.
+
+It contains general guidelines for writing clean and maintainable code in Angular projects, as well as specific style guides for different file types such as Git commits, HTML templates, NPM packages, SCSS styling files, and TypeScript files.

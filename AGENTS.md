@@ -28,7 +28,7 @@ You are an expert in TypeScript, Angular, and scalable web application developme
 - Use `computed()` for derived state
 - Set `changeDetection: ChangeDetectionStrategy.OnPush` in `@Component` decorator
 - Prefer inline templates for small components
-- Prefer Reactive forms instead of Template-driven ones
+- Prefer Signal Forms (stable in v22) for new forms; do not write new Reactive or Template-driven forms
 - Do NOT use `ngClass`, use `class` bindings instead
 - Do NOT use `ngStyle`, use `style` bindings instead
 - When using external templates/styles, use paths relative to the component TS file.
@@ -52,3 +52,16 @@ You are an expert in TypeScript, Angular, and scalable web application developme
 - Design services around a single responsibility
 - Use the `providedIn: 'root'` option for singleton services
 - Use the `inject()` function instead of constructor injection
+
+## Project Style Guide
+
+- Follow the repository style guide in `style-guide/style-guide.md`.
+- Load the specific guide for the file or decision being touched:
+  - TypeScript and Angular code: `style-guide/style-guide.ts.md`
+  - Angular templates: `style-guide/style-guide.html.md`
+  - Accessibility (a11y): `style-guide/style-guide.a11y.md`
+  - SCSS: `style-guide/style-guide.scss.md`
+  - NPM dependencies: `style-guide/style-guide.npm.md`
+  - Markdown documentation: `style-guide/style-guide.md.md`
+  - Testing (Vitest & Playwright): `style-guide/style-guide.spec.md`
+  - Git commits: `style-guide/style-guide.git.md`
