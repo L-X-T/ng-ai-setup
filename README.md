@@ -84,3 +84,9 @@ We updated our Husky pre-commit hook to run lint-staged:
 ```shell
 pnpm lint-staged
 ```
+
+### Extend ESLint configuration
+
+By adding some more rules to our ESLint configuration, we can enforce better coding practices and catch potential issues early on. We can extend the default Angular ESLint configuration by creating a `.eslintrc.json` file in the root of our project with the following content:
+
+Just look at the `eslint.config.js` to see my recommendations.
